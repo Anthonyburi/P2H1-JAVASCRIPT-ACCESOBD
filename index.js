@@ -68,16 +68,16 @@ app.get("/register", (req, res) => {
   res.render("registro");
 });
 
-app.get("/incio/acerca", (req, res) => {
+app.get("/acerca", (req, res) => {
   res.render("acerca");
 });
-app.get("/incio/contacto", (req, res) => {
+app.get("/contacto", (req, res) => {
   res.render("contacto");
 });
-app.get("/incio/servicios", (req, res) => {
+app.get("/servicios", (req, res) => {
   res.render("servicios");
 });
-app.get("/incio/productos", (req, res) => {
+app.get("/productos", (req, res) => {
   res.render("productos");
 });
 
