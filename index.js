@@ -22,6 +22,7 @@ const db = mysql.createConnection({
     }
   });
 
+  let arreglo = [];  // Arreglo vacío
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
@@ -41,6 +42,7 @@ const obtenerUsuarios = (req, res, next) => {
 // Rutas que usan el middleware `obtenerUsuarios`
 app.get('/home', obtenerUsuarios, (req, res) => {
   console.log('Usuarios obtenidos:', req.usuarios);
+  arreglo.push(req.usuarios);
   res.sendFile(__dirname + '/home.html');
 });
 
@@ -57,3 +59,5 @@ app.get('/home', obtenerUsuarios, (req, res) => {
 app.listen(3000,function(){
     console.log('Servidor activado ' );
 })
+
+module.exports = arreglo;
