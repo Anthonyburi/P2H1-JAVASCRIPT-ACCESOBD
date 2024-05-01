@@ -44,7 +44,7 @@ app.get('/home', obtenerUsuarios, (req, res) => {
   res.sendFile(__dirname + '/home.html');
 });
 
-  app.get('/acercade', (req, res) => {
+  app.get('/home/acercade', (req, res) => {
     res.sendFile(__dirname + '/acerca.html');
   });
   app.get('/home/servicios', (req, res) => {
