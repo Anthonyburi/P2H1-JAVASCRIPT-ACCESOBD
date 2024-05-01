@@ -41,7 +41,7 @@ const obtenerUsuarios = (req, res, next) => {
 // Rutas que usan el middleware `obtenerUsuarios`
 app.get('/home', obtenerUsuarios, (req, res) => {
   console.log('Usuarios obtenidos:', req.usuarios);
-  res.sendFile(__dirname + '/pages/home.html');
+  res.sendFile(__dirname + '/home.html');
 });
 
   app.get('/home/acercade', (req, res) => {
