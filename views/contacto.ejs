@@ -1,0 +1,41 @@
+<!-- views/acerca.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acerca de Tronquitos Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <div class="max-w-2xl mx-auto mt-8">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+        Contactanos de Tronquitos Bar 🍻
+      </h2>
+      <div class="max-w-2xl mx-auto mt-8">
+        <form class="bg-white p-8 rounded-lg shadow-md">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-600 text-sm font-medium">Nombre</label>
+                <input type="text" id="name" name="name" class="mt-1 p-2 w-full border rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-gray-600 text-sm font-medium">Correo Electrónico</label>
+                <input type="email" id="email" name="email" class="mt-1 p-2 w-full border rounded-md">
+            </div>
+
+            <div class="mb-4">
+                <label for="message" class="block text-gray-600 text-sm font-medium">Mensaje</label>
+                <textarea id="message" name="message" rows="4" class="mt-1 p-2 w-full border rounded-md"></textarea>
+            </div>
+
+            <button type="submit" class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600">Enviar Mensaje</button>
+        </form>
+    </div>
+    </div>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
