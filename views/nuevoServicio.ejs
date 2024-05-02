@@ -1,0 +1,47 @@
+<!-- views/editarProducto.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Servicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+ 
+    <div class="px-4" id="main-content">
+        <div class="max-w-2xl mx-auto mt-8">
+            <p class="text-gray-600 text-lg font-bold">Nuevo Servicio 🍻</p>
+            <div class="border-t border-gray-700 my-4"></div>
+        </div>
+
+        <div class="max-w-2xl mx-auto mt-8">
+            <form class="bg-white p-8 rounded-lg shadow-md" action="/servicios" method="post">
+                <div class="mb-4">
+                    <label for="name_servicio" class="block text-gray-600 text-sm font-medium">Nombre del Servicio:</label>
+                    <input type="text" id="name_servicio" name="name_servicio" value="Venta al Por Mayor" required class="mt-1 p-2 w-full border rounded-md">
+                </div>
+
+                <div class="mb-4">
+                    <label for="descr_servicio" class="block text-gray-600 text-sm font-medium">Descripción:</label>
+                    <input type="text" id="descr_servicio" name="descr_servicio" value="Ofrecemos precios especiales para compras al por mayor" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+
+                <div class="mb-4">
+                    <label for="img_servicio" class="block text-gray-600 text-sm font-medium">URL del Servicio:</label>
+                    <input type="text" id="img_servicio" name="img_servicio" value="https://elcordillerano-s2.cdn.net.ar/st2i1700/2023/05/elcordillerano/images/49/40/494052_8ddceae25ec00f8c3f7d463d56a4f208a6bfc76094f689dab978f059ea2456a1/sm.webp" class="mt-1 p-2 w-full border rounded-md">
+                </div>
+
+                <button type="submit" class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600">Guardar Servicio</button>
+
+                <a  href="/servicios" class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600">Volver</a>
+
+            </form>
+
+           
+        </div>
+    </div>
+
+
+    <%- include('partials/footer') %>
+</body>
+</html>
