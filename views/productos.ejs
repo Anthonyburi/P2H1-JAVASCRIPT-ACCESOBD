@@ -1,24 +1,56 @@
 <!-- views/acerca.ejs -->
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Acerca de Tronquitos Bar</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/estilos.css">
-</head>
-<body>
+  </head>
+  <body>
     <%- include('partials/header') %>
 
     <div class="max-w-2xl mx-auto mt-8">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">
         Productos de Tronquitos Bar 🍻
       </h2>
-      <p>
-        Tronquitos Bar es una tienda en línea dedicada a ofrecer las mejores bebidas...
-      </p>
+
+      <a class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-purple-600" href="/productos/add">Agregar Producto</a>
+      <!-- Enlace para agregar nuevos productos -->
+      <div class="max-w-2xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <% productos.forEach((producto) => { %>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <img
+            src="<%= producto.img_producto %>"
+            class="w-full h-40 object-cover rounded-md mb-4"
+          />
+          <h3 class="text-lg font-semibold mb-2">
+            <%= producto.name_producto %>
+          </h3>
+          <p class="text-gray-500 mb-2"><%= producto.descr_producto %></p>
+          <p class="text-purple-500 font-semibold mb-2">
+            $ <%= producto.precio_producto %>
+          </p>
+          <span class="bg-green-500 text-white px-2 py-1 rounded-full"
+            ><%= producto.estado_producto %></span
+          >
+          <span class="bg-blue-500 text-white px-2 py-1 rounded-full">
+            <a href="/productos/editar/<%= producto.id_producto %>">Editar</a>
+          </span>
+
+          <span class=" px-2 py-1 rounded-full">
+            <form
+              action="/productos/eliminar/<%= producto.id_producto %>"
+              method="post"
+              style="display: inline; padding:0;"
+            >
+              <button type="submit">Eliminar</button>
+            </form>
+          </span>
+        </div>
+        <% }); %>
+      </div>
     </div>
 
     <%- include('partials/footer') %>
-</body>
+  </body>
 </html>
